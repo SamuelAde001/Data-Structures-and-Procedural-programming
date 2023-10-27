@@ -1,0 +1,30 @@
+ALGORITHM sumOfElements
+
+
+// Declaration of initial variables
+VAR
+  set_a : ARRAY_OF INTEGER[set_a.length];
+  set_b : ARRAY_OF INTEGER[set_b.length];
+  sum,i : INTEGER; := 0
+BEGIN
+  FOR i FROM 0 TO set_a.length-1 STEP 1  DO   // Loop through the values of set_a 
+      FOR i FROM 0 TO set_b.length-1 STEP 1  DO  // Loop through the values of set_b
+        IF (set_a[i] != set_b[i]) THEN // check if the integer of set_a is not equal to the integer of set_b
+          sum := sum + set_a[i] // if not equal, add the value of set_a to the value of sum
+          BREAK
+        END_IF
+      END_FOR
+  END_FOR
+
+
+// running cod eto check set_b through set_a
+  FOR i FROM 0 TO set_b.length-1 STEP 1  DO   // Loop through the values of set_b
+      FOR i FROM 0 TO set_b.length-1 STEP 1  DO  // Loop through the values of set_a
+        IF (set_a[i] != set_b[i]) THEN // check if the integer of set_b is not equal to the integer of set_a
+          sum := sum + set_a[i] // if not equal, add the value of set_b to the value of sum
+          BREAK
+        END_IF
+      END_FOR
+  END_FOR
+  write(sum)
+END
